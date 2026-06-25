@@ -14,42 +14,85 @@ const openSans = Open_Sans({
 });
 
 export const metadata = {
-  title: "Car Rental in Varanasi | Aaradhya Tour & Travels - Taxi & Cab Services",
+  metadataBase: new URL("https://cabservicesvaranasi.com"),
+
+  title: {
+    default:
+      "Cab Services in Varanasi | Airport Taxi & Outstation Cabs",
+    template: "%s | Cab Services Varanasi",
+  },
+
   description:
-    "Book reliable car rental services in Varanasi with Aaradhya Tour & Travels.Airport transfers, chauffeur-driven cars, business travel & outstation taxis at best prices.",
+    "Book trusted cab services in Varanasi for airport transfers, local sightseeing, outstation trips, corporate travel, and one-way taxi bookings at affordable prices.",
+
   keywords: [
-    "car rental in varanasi",
-    "aaradhya tour and travels",
-    "aaradhyatourandtravels",
-    "aaradhya tours and travels",
+    "cab services in varanasi",
+    "cab service varanasi",
     "taxi service in varanasi",
-    "cab booking varanasi",
+    "car rental in varanasi",
     "airport taxi varanasi",
-    "chauffeur driven car rental",
+    "airport cab varanasi",
     "outstation cab varanasi",
-    "Aaradhya Tours and Travels",
-     "Aaradhya Tour and Travels",
-    "varanasi cab service",
+    "local cab service varanasi",
+    "one way taxi varanasi",
+    "corporate cab service varanasi",
+    "tempo traveller varanasi",
+    "cab booking varanasi",
+    "varanasi taxi service",
+    "chauffeur driven car rental varanasi",
+    "local sightseeing cab varanasi",
   ],
 
-  metadataBase: new URL("https://aaradhyatourandtravels.com"),
+  alternates: {
+    canonical: "/",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 
   openGraph: {
-    title: "Car Rental in Varanasi | Aaradhya Tour & Travels",
+    title:
+      "Cab Services in Varanasi | Airport Taxi & Outstation Cabs",
+
     description:
-      "Reliable car rental and taxi services in Varanasi.Airport transfers, chauffeur-driven cars, outstation and local cab booking at best prices.",
-    url: "https://aaradhyatourandtravels.com",
-    siteName: "Aaradhya Tour & Travels",
+      "Book reliable cab services in Varanasi for airport transfers, local sightseeing, outstation travel, corporate rides and one-way taxi bookings.",
+
+    url: "https://cabservicesvaranasi.com",
+
+    siteName: "Cab Services Varanasi",
+
     images: [
       {
         url: "/logo.png",
-        width: 800,
-        height: 600,
-        alt: "Aaradhya Tour & Travels car rental service in Varanasi",
+        width: 1200,
+        height: 630,
+        alt: "Cab Services in Varanasi",
       },
     ],
-    locale: "en_US",
+
+    locale: "en_IN",
     type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title:
+      "Cab Services in Varanasi | Airport Taxi & Outstation Cabs",
+
+    description:
+      "Book reliable cab services in Varanasi for airport transfers, local sightseeing and outstation travel.",
+
+    images: ["/logo.png"],
   },
 
   icons: {
@@ -61,7 +104,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html className=" bg-black" lang="en">
+    <html lang="en">
       <head>
         <link rel="icon" href="/logo.png" sizes="any" />
         <link rel="apple-touch-icon" href="/logo.png" />

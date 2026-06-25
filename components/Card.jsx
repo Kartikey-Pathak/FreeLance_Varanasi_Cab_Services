@@ -1,86 +1,148 @@
 "use client";
 
-import { Phone, Calendar } from "lucide-react";
+import { useRef } from "react";
+import gsap from "gsap";
 import Image from "next/image";
-import Link from "next/link";
+import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 
-export default function Card({ img, name, location, tag, rates }) {
+export default function Card({
+  img,
+  name,
+  tag,
+  rates,
+}) {
+  const cardRef = useRef(null);
+  const glowRef = useRef(null);
+
+  const waLink = `https://wa.me/918090579753?text=${encodeURIComponent(
+    `Hi, I want to book ${name}`
+  )}`;
+
+  const onEnter = () => {
+    gsap.to(glowRef.current, {
+      opacity: 1,
+      duration: 0.3,
+    });
+  };
+
+  const onLeave = () => {
+    gsap.to(glowRef.current, {
+      opacity: 0,
+      duration: 0.3,
+    });
+  };
+
   return (
-    <Link href={`/cars/${name}`} className="block">
-      <div
-        onMouseEnter={() => window.cursor?.enter()}
-        onMouseLeave={() => window.cursor?.leave()}
-        className="max-w-md w-[20rem] md:w-[80rem] cursor-pointer lg:w-[25rem] xl:w-[23rem] bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
+    <CardContainer className="w-full rounded-[20px] transition-all
+duration-300
+hover:shadow-[0_0_40px_rgba(249,115,22,0.3)] inter-var">
+      <CardBody
+        ref={cardRef}
+        onMouseEnter={onEnter}
+        onMouseLeave={onLeave}
+        className="group/card relative bg-white rounded-[20px]
+        overflow-hidden border border-[#E2E8F0]
+        w-full h-full"
+        style={{
+          boxShadow: "0 4px 24px rgba(15,23,42,0.07)",
+        }}
       >
-        <div className="relative">
-          <div className="relative w-full h-56 bg-[#1f1f1f]">
-            <Image
-              onMouseEnter={() => window.cursor?.enter()}
-              onMouseLeave={() => window.cursor?.leave()}
-              src={img || "/no.jpg"}
-              alt={name || "Car"}
-              fill
-              className="object-contain hover:cursor-pointer hover:scale-105 ease-in-out transition-all"
-              sizes="(max-width: 768px) 100vw, 400px"
-            />
-          </div>
+        {/* IMAGE */}
+        <div className="relative h-[220px] bg-[#F8FAFC] overflow-hidden">
+
+          <div
+            ref={glowRef}
+            className="absolute inset-0 opacity-0 z-10 pointer-events-none"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(249,115,22,.15), transparent 70%)",
+            }}
+          />
 
           {tag && (
-            <span className="absolute top-4 left-4 bg-[#FF3600] text-white text-xs px-3 py-1 rounded-full">
+            <CardItem
+              translateZ={60}
+              className="absolute top-3 left-3 z-20
+              bg-[#F97316] text-white text-[0.68rem]
+              font-bold px-[10px] py-[4px] rounded-full"
+            >
               {tag}
-            </span>
+            </CardItem>
           )}
+
+          <CardItem
+            translateZ={100}
+            className="relative w-full h-full"
+          >
+            <Image
+              src={img || "/no.jpg"}
+              alt={`${name} car rental in Varanasi`}
+              fill
+              className="object-contain p-4
+              group-hover/card:scale-105
+              transition-all duration-300"
+            />
+          </CardItem>
         </div>
 
+        {/* BODY */}
         <div className="p-5">
-          <h2 className="text-xl font-bold text-white">
-            {name || "Swift Dzire"}
-          </h2>
-          <p className="text-sm text-gray-400 mb-4">
-            {location || "Varanasi"}
-          </p>
 
-          <div className="space-y-3">
-            {(rates || [
-              { label: "Airport Transfer", price: "₹900" },
-              { label: "8 Hrs / 80 KM", price: "₹1800" },
-              { label: "Full Day / 200 KM", price: "₹2200" },
-              { label: "Outstation (Min. 250km/day)", price: "₹11/km" },
-            ]).map((item, index) => (
-              <div
+          <CardItem
+            as="h3"
+            translateZ={60}
+            className="font-poppins font-bold
+            text-[1.15rem] text-[#0F172A]"
+          >
+            {name}
+          </CardItem>
+
+          <CardItem
+            as="p"
+            translateZ={40}
+            className="text-[0.82rem]
+            text-[#64748B] mt-2 mb-4"
+          >
+            Comfortable AC {name} available for
+            local, airport and outstation travel
+            in Varanasi.
+          </CardItem>
+
+          <div className="grid grid-cols-2 gap-2 mb-5">
+            {(rates || []).map((item, index) => (
+              <CardItem
                 key={index}
-                className="flex justify-between items-center text-sm border-b border-white/10 last:border-none pb-2"
+                translateZ={30}
+                className="bg-[#F8FAFC]
+                border border-[#E2E8F0]
+                rounded-[10px] px-3 py-2"
               >
-                <span className="text-gray-400">{item.label}</span>
-                <span className="font-semibold text-white">
+                <p className="text-[0.68rem] text-[#94A3B8]">
+                  {item.label}
+                </p>
+
+                <p className="font-bold text-[#0F172A]">
                   {item.price}
-                </span>
-              </div>
+                </p>
+              </CardItem>
             ))}
           </div>
 
-          <div className="mt-6 flex gap-3">
-            <Link
-              className="w-52 flex items-center justify-center"
-              href={`/contact?car=${encodeURIComponent(name)}`}
-            >
-              <button className="cursor-pointer hover:bg-[#e63200] active:bg-[#cc2d00] flex-1 flex items-center justify-center gap-2 bg-[#FF3600] text-white py-2.5 rounded-xl font-semibold transition">
-                <Calendar size={18} />
-                Book Now
-              </button>
-            </Link>
-
-            <a
-              href="tel:+918090579753"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button className="h-full cursor-pointer active:bg-white/10 flex items-center justify-center px-4 rounded-xl border border-white/10 hover:bg-white/10 transition">
-                <Phone className="text-white" size={18} />
-              </button>
-            </a>
-          </div>
+          <CardItem
+            translateZ={80}
+            as="a"
+            href={waLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full flex items-center
+            justify-center gap-2 py-3 rounded-[10px]
+            bg-[#25D366] text-white font-bold
+            hover:bg-[#1ebe5b] transition-colors"
+          >
+            Book on WhatsApp
+          </CardItem>
         </div>
-      </div>
-    </Link>
+      </CardBody>
+    </CardContainer>
   );
 }

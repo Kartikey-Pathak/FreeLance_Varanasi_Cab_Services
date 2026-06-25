@@ -2,16 +2,26 @@ import React from "react";
 import { FlipWords } from "../src/components/ui/flip-words";
 
 export function FlipWord() {
- const words = ["outstation", "local", "airport", "corporate"];
+const words = [
+  "Airport Transfers",
+  "Outstation Trips",
+  "Local Sightseeing",
+  "Corporate Rides",
+];
 
 
   return (
-    <div className="h-fit flex justify-center items-center px-4">
-      <div className="text-4xl mx-auto font-normal text-[#CBCBCB] dark:text-neutral-100">
-        Book
-        <FlipWords duration={1000} words={words} /> <br />
-        car rentals with Aaradhya Tour & Travels
-      </div>
-    </div>
+       <h1
+      className="font-poppins font-extrabold text-white leading-[1.15] mb-[18px]"
+      style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}
+    >
+      Affordable{" "}
+      <span className="text-[#F97316] inline-block">
+        <FlipWords duration={1500} words={words} />
+      </span>
+      <br />
+      Cab Services in{" "}
+      <span className="text-[#F97316]">Varanasi</span>
+    </h1>
   );
 }

@@ -1,6 +1,4 @@
-"use client"
 
-import { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import Form from "../../components/Form";
 import Any from "../../components/Any";
@@ -18,69 +16,53 @@ import Section from "../../components/Section";
 import PolicyAccordion from "../../components/PolicyAccordion";
 import PolicyMain from "../../components/PolicyMain";
 import HomeSeoContent from "../../components/HomeSeoContent";
+import NavContainer from "../../components/NavContainer";
 
 
 export default function Home() {
-  const [open, setOpen] = useState(false);
-  const [cars, setCars] = useState([]); //fetch the cars data
 
-  // ✅ fetch early
-  useEffect(() => {
-    async function fetchCars() {
-      try {
-        const res = await fetch("/api/cars");
-        const data = await res.json();
-        setCars(data);
-      } catch (err) {
-        console.error("Error fetching cars:", err);
-      }
-    }
-    fetchCars();
-  }, []);
-  
 
   return (
     <section className=" w-full">
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Aaradhya Tours & Travels",
-            "image": "https://aaradhyatourandtravels.com/logo.png",
-            "telephone": "+91-8090579753",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Varanasi",
-              "addressRegion": "UP",
-              "addressCountry": "IN"
-            },
-            "areaServed": {
-              "@type": "City",
-              "name": "Varanasi"
-            },
-            "url": "https://aaradhyatourandtravels.com",
-            "priceRange": "₹₹",
-            "serviceType": [
-              "Car Rental",
-              "Taxi Service",
-              "Airport Transfer",
-              "Outstation Cab"
-            ]
-          }),
-        }}
-      />
+       <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Aaradhya Tours & Travels",
+      "image": "https://aaradhyatourandtravels.com/logo.png",
+      "telephone": "+91-8090579753",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Varanasi",
+        "addressRegion": "UP",
+        "addressCountry": "IN"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Varanasi"
+      },
+      "url": "https://aaradhyatourandtravels.com",
+      "priceRange": "₹₹",
+      "serviceType": [
+        "Car Rental",
+        "Taxi Service",
+        "Airport Transfer",
+        "Outstation Cab"
+      ]
+    }),
+  }}
+/>
 
 
 
       <header>
-        <Nav open={open} setOpen={setOpen} />
-        <Side open={open} setOpen={setOpen} />
+        <NavContainer/>
       </header>
 
-      <main className=" bg-black">
+      <main>
         <Hero />
 
         <Service />
@@ -88,12 +70,12 @@ export default function Home() {
 
 
 
-        <Any packages={cars} />
+        <Any />
 
         <Section />
 
 
-        <HomeSeoContent />
+       <HomeSeoContent/>
 
 
         <Testimonial />

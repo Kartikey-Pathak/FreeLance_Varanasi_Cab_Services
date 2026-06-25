@@ -5,15 +5,15 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Card from "./Card";
+import { carsInfo } from "../src/utils/CarInfo.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Any({ packages }) {
+export default function Any() {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
 
-
-  //Setted this on home only***
+  // const [packages, setPackages] = useState([]);
 
   // ✅ Fetch cars from /api/cars
   // useEffect(() => {
@@ -21,6 +21,7 @@ export default function Any({ packages }) {
   //     try {
   //       const res = await fetch("/api/cars");
   //       const data = await res.json();
+  //        console.log("Cars from DB:", data);
   //       setPackages(data); // no filtering
   //     } catch (error) {
   //       console.error("Error fetching cars:", error);
@@ -67,21 +68,21 @@ export default function Any({ packages }) {
   }, []);
 
   return (
-    <section id="domestic" className="flex flex-col items-center justify-center bg-black py-20">
-      <div className="lg:w-[95%] w-full px-2 md:px-10 flex items-center py-20 md:py-30 flex-col bg-[#191919] rounded-[3rem]">
-        <h1 className="text-[1rem] md:text-xl font-bold text-[#FF3600]">
-          <i className="fa-solid fa-asterisk text-xl font-bold text-[#FF3600]"></i> Our Fleets
-        </h1>
-        <h1 ref={headingRef} className="text-xl md:text-5xl text-white font-bold mb-10">
-          Reliable rides, ready for you.
+    <section id="domestic" className="flex flex-col items-center justify-center bg-white py-20">
+      <div className="lg:w-[95%] w-full px-2 md:px-10 flex items-center py-20 md:py-30 flex-col bg-[#F8FAFC] rounded-[3rem]">
+   <p className="text-[0.78rem] md:text-2xl font-bold tracking-[1.5px] uppercase text-[#F97316] mb-[10px]">
+              Our Fleets
+          </p>
+        <h1 style={{ fontSize: "clamp(1.7rem, 3vw, 2.4rem)" }} ref={headingRef} className="text-center text-black font-bold mb-10">
+           Premium Cars for Local, <br></br> Airport & Outstation Travel in Varanasi
         </h1>
 
         <div ref={sectionRef} className="opacity-0 w-full flex justify-center">
           <div className="w-full  md:w-[90%] grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 place-items-center">
-            {packages?.length > 0 ? (
-              packages.map((pkg) => (
+            {carsInfo.length > 0 ? (
+              carsInfo.map((pkg) => (
                 <Card
-                  key={pkg._id}
+                  key={pkg.id}
                   img={pkg.image}
                   name={pkg.name}
                   location={pkg.location}
@@ -91,16 +92,7 @@ export default function Any({ packages }) {
               ))
             ) : (
               <div className="flex items-center justify-center min-h-[50vh] col-span-full">
-                <div className="flex w-52 flex-col gap-4">
-                  <div className="flex items-center gap-4">
-                    <div className="skeleton bg-gray-200 h-16 w-16 shrink-0 rounded-full"></div>
-                    <div className="flex flex-col gap-4">
-                      <div className="skeleton bg-gray-200 h-4 w-20"></div>
-                      <div className="skeleton bg-gray-200 h-4 w-28"></div>
-                    </div>
-                  </div>
-                  <div className="skeleton bg-gray-200 h-32 w-full"></div>
-                </div>
+                <p className="text-gray-500 text-5xl font-semibold">Loading...</p>
               </div>
             )}
           </div>
@@ -109,3 +101,4 @@ export default function Any({ packages }) {
     </section>
   );
 }
+

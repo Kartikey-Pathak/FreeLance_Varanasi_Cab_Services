@@ -26,19 +26,19 @@ function Nav({ open, setOpen }) {
   };
 
   return (
-    <nav className=" absolute top-0 z-50 w-full flex h-17 items-center bg-black">
+    <nav className=" absolute top-0 z-50 w-full flex h-17 items-center  backdrop-blur-sm">
       {isDesktop ? (
         <div className="flex justify-between items-center h-20  w-full px-10">
           {/* Logo */}
-          <div className="flex items-center cursor-pointer  h-fit ">
-            <a href="/" className=" h-full text-white flex items-center justify-center mt-5">
+          {/* <div className="flex items-center cursor-pointer  h-fit ">
+            <a href="/" className=" h-full text-black flex items-center justify-center mt-5">
               <img
                 src="/logo.png"
                 alt="Logo"
                 className="h-64 w-auto object-contain"
               />
             </a>
-          </div>
+          </div> */}
 
           {/* Menu */}
           <ul className="flex gap-10  w-full h-full justify-center items-center">
@@ -84,7 +84,7 @@ function Nav({ open, setOpen }) {
             </li>
           </ul>
 
-          <Link  className=" hover:scale-105 transition-all active:scale-105 " href="/contact">
+          {/* <Link  className=" hover:scale-105 transition-all active:scale-105 " href="/contact">
             <button
               onMouseEnter={() => window.cursor?.enter()}
               onMouseLeave={() => window.cursor?.leave()}
@@ -92,10 +92,10 @@ function Nav({ open, setOpen }) {
             >
               <h1 className=" font-semibold text-white">Book Now</h1>
             </button>
-          </Link>
+          </Link> */}
         </div>
       ) : (
-        <div className="flex justify-between items-center h-24 mt-5 w-full px-5 backdrop-blur-2xl ">
+        <div className="flex bg-white justify-between items-center h-24 mt-5 w-full px-5 backdrop-blur-2xl ">
           {/* Logo */}
           <div className="flex items-center justify-center h-full w-[10rem]">
             <a href="/" className=" flex items-center justify-center">
@@ -112,9 +112,9 @@ function Nav({ open, setOpen }) {
             {/* Dropdown */}
             <summary
               onClick={() => setOpen(true)}
-              className="btn text-white bg-transparent border-none shadow-none"
+              className="btn text-black bg-transparent border-none shadow-none"
             >
-              <i className="fa-solid fa-bars text-white text-2xl"></i>
+              <i className="fa-solid fa-bars text-black text-2xl"></i>
             </summary>
           </div>
         </div>
