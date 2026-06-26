@@ -2,14 +2,17 @@ import React from "react";
 import { FaFacebookF, FaYoutube, FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 
+//cabservicesvaranasi.com
+//cabservicesvaranasi91@gmail.com
+
 const Footer = () => {
   return (
-    <footer className="w-full bg-[#191919] py-10 flex justify-center">
+    <footer className="w-full bg-[#0F172A] py-10 flex justify-center">
       {/* Main Footer Wrapper */}
-      <div className="relative w-full lg:w-[95%] rounded-none lg:rounded-[40px] overflow-hidden">
+      <div className="relative w-full rounded-none lg:rounded-[40px] overflow-hidden">
 
         {/* Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br  from-black via-[#0f0f0f] to-black"></div>
+        <div className="absolute inset-0 "></div>
 
         {/* Glow Effects */}
         <div className="absolute top-10 left-10 w-32 h-32 bg-orange-500/20 rounded-full blur-3xl"></div>
@@ -23,10 +26,10 @@ const Footer = () => {
             {/* Brand */}
             <div>
               <h2 className="text-2xl font-bold">
-                <span className="text-[#FF3600]">ARADHYA TOUR</span> AND TRAVELS
+                <span className="text-[#FF3600]">CAB SERVICES</span> <br /> VARANASI
               </h2>
               <p className="text-gray-400 mt-4">
-                Experience the comfort and reliability of traveling with Aaradhya Tour & Travels.
+                Your trusted choice for airport transfers, local sightseeing, and outstation cab services in Varanasi.
               </p>
             </div>
 
@@ -34,9 +37,9 @@ const Footer = () => {
             <div className=" flex flex-col gap-2">
               <h3 className="text-lg font-semibold mb-4">Links</h3>
 
-              <Link href="/car-rental-in-varanasi">Car Rental in Varanasi</Link>
-              <Link href="/taxi-service-in-varanasi">Taxi Service</Link>
-              <Link href="/airport-taxi-varanasi">Airport Taxi</Link>
+              <Link className="text-gray-400 hover:text-[#F97316]/80 transition-all" href="/car-rental-in-varanasi">Car Rental in Varanasi</Link>
+              <Link className="text-gray-400 hover:text-[#F97316]/80 transition-all" href="/taxi-service-in-varanasi">Taxi Service</Link>
+              <Link className="text-gray-400 hover:text-[#F97316]/80 transition-all" href="/airport-taxi-varanasi">Airport Taxi</Link>
 
             </div>
 
@@ -44,10 +47,10 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
               <ul className=" cursor-pointer space-y-2 text-gray-400">
-                <li><Link className="hover:text-[#FF3600]/80 transition-all" href="/">Home</Link></li>
-                <li><Link className="hover:text-[#FF3600]/80 transition-all" href="/about">About Us</Link></li>
-                <li><Link className="hover:text-[#FF3600]/80 transition-all" href="/contact">Contact Us</Link></li>
-                <li><Link className="hover:text-[#FF3600]/80 transition-all" href="/rent">Rent a Car</Link></li>
+                <li><Link className="hover:text-[#F97316]/80 transition-all" href="/">Home</Link></li>
+                <li><Link className="hover:text-[#F97316]/80 transition-all" href="/about">About Us</Link></li>
+                <li><Link className="hover:text-[#F97316]/80 transition-all" href="/contact">Contact Us</Link></li>
+                <li><Link className="hover:text-[#F97316]/80 transition-all" href="/rent">Rent a Car</Link></li>
               </ul>
             </div>
 
@@ -59,9 +62,9 @@ const Footer = () => {
 
               <div className="flex items-center">
                 {/* Email Input */}
-                <p className="text-gray-400 mt-4">Email : <a href="mailto:rajat6427@gmail.com" className="text-orange-500 hover:underline">
+                <p className="text-gray-400 mt-4">Email : <a href="mailto:rajat6427@gmail.com" className="text-[#F97316] hover:underline">
 
-                  rajat6427@gmail.com</a>
+                  cabservicesvaranasi91@gmail.com</a>
                 </p>
 
               </div>
@@ -74,13 +77,19 @@ const Footer = () => {
           {/* Bottom Section */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <p className="text-gray-400 text-sm">
-              © 2025 Aaradhya Tour & Travels. All rights reserved.
+              © 2026 Cab Services Varanasi. All rights reserved.
             </p>
 
             <p className="text-gray-400">
-              Website designed & developed by <br/>
-              <a className=" text-orange-500 underline" href="https://www.linkedin.com/in/kartikey-pathakb580297/" target="_blank" rel="noopener">
-                Kartikey Pathak
+              Website designed & developed by <br />
+              <a
+                className="text-orange-500 text-xl underline"
+                href="https://wa.me/918881509360"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                
+                Kartikey Pathak <i class="fa-brands fa-whatsapp"></i>
               </a>
             </p>
 

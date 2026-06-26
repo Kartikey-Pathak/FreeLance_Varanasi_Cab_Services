@@ -22,11 +22,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Nav from "../../../components/Nav";
 import Side from "../../../components/Side";
 import Footer from "../../../components/Footer";
-import AboutTab from "../../../components/AboutTab";
 import PolicyAccordion from "../../../components/PolicyAccordion";
 import Last from "../../../components/Last";
 import AboutSeoContent from "../../../components/AboutSeoContent";
 import { FlipWord } from "../../../components/FlipWord";
+import { FlipWordAbout } from "../../../components/FlipWordAbout";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -41,9 +41,9 @@ const trustBadges = [
 
 const stats = [
   { num: "5000+", label: "Happy Customers", icon: <Users size={22} /> },
-  { num: "8+",    label: "Years in Varanasi", icon: <Award size={22} /> },
-  { num: "50+",   label: "Verified Drivers", icon: <ShieldCheck size={22} /> },
-  { num: "15+",   label: "Vehicle Options", icon: <Car size={22} /> },
+  { num: "8+", label: "Years in Varanasi", icon: <Award size={22} /> },
+  { num: "50+", label: "Verified Drivers", icon: <ShieldCheck size={22} /> },
+  { num: "15+", label: "Vehicle Options", icon: <Car size={22} /> },
 ];
 
 const values = [
@@ -267,17 +267,17 @@ export default function AboutPage() {
 
   // Hero refs
   const contentRef = useRef(null);
-  const cardRef     = useRef(null);
-  const badgeRef    = useRef(null);
-  const pulseRef    = useRef(null);
+  const cardRef = useRef(null);
+  const badgeRef = useRef(null);
+  const pulseRef = useRef(null);
 
   // Section refs
-  const statsRef    = useRef(null);
-  const missionRef  = useRef(null);
+  const statsRef = useRef(null);
+  const missionRef = useRef(null);
   const timelineRef = useRef(null);
-  const valuesRef   = useRef(null);
-  const teamRef     = useRef(null);
-  const ctaRef      = useRef(null);
+  const valuesRef = useRef(null);
+  const teamRef = useRef(null);
+  const ctaRef = useRef(null);
 
   /* ── Hero entrance ── */
   useEffect(() => {
@@ -306,44 +306,56 @@ export default function AboutPage() {
     if (statEls) {
       gsap.fromTo(statEls,
         { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.6, stagger: 0.12, ease: "power3.out",
-          scrollTrigger: { trigger: statsRef.current, start: "top 82%" } }
+        {
+          opacity: 1, y: 0, duration: 0.6, stagger: 0.12, ease: "power3.out",
+          scrollTrigger: { trigger: statsRef.current, start: "top 82%" }
+        }
       );
     }
 
     // Mission split
     gsap.fromTo(missionRef.current?.querySelectorAll(".mission-item"),
       { opacity: 0, y: 40 },
-      { opacity: 1, y: 0, duration: 0.7, stagger: 0.1, ease: "power3.out",
-        scrollTrigger: { trigger: missionRef.current, start: "top 80%" } }
+      {
+        opacity: 1, y: 0, duration: 0.7, stagger: 0.1, ease: "power3.out",
+        scrollTrigger: { trigger: missionRef.current, start: "top 80%" }
+      }
     );
 
     // Timeline
     gsap.fromTo(timelineRef.current?.querySelectorAll(".tl-item"),
       { opacity: 0, x: -30 },
-      { opacity: 1, x: 0, duration: 0.6, stagger: 0.15, ease: "power3.out",
-        scrollTrigger: { trigger: timelineRef.current, start: "top 78%" } }
+      {
+        opacity: 1, x: 0, duration: 0.6, stagger: 0.15, ease: "power3.out",
+        scrollTrigger: { trigger: timelineRef.current, start: "top 78%" }
+      }
     );
 
     // Values cards
     gsap.fromTo(valuesRef.current?.querySelectorAll(".value-card"),
       { opacity: 0, scale: 0.93 },
-      { opacity: 1, scale: 1, duration: 0.55, stagger: 0.1, ease: "back.out(1.4)",
-        scrollTrigger: { trigger: valuesRef.current, start: "top 80%" } }
+      {
+        opacity: 1, scale: 1, duration: 0.55, stagger: 0.1, ease: "back.out(1.4)",
+        scrollTrigger: { trigger: valuesRef.current, start: "top 80%" }
+      }
     );
 
     // Team
     gsap.fromTo(teamRef.current?.querySelectorAll(".team-card"),
       { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.6, stagger: 0.12, ease: "power3.out",
-        scrollTrigger: { trigger: teamRef.current, start: "top 82%" } }
+      {
+        opacity: 1, y: 0, duration: 0.6, stagger: 0.12, ease: "power3.out",
+        scrollTrigger: { trigger: teamRef.current, start: "top 82%" }
+      }
     );
 
     // CTA
     gsap.fromTo(ctaRef.current,
       { opacity: 0, y: 40 },
-      { opacity: 1, y: 0, duration: 0.7, ease: "power3.out",
-        scrollTrigger: { trigger: ctaRef.current, start: "top 85%" } }
+      {
+        opacity: 1, y: 0, duration: 0.7, ease: "power3.out",
+        scrollTrigger: { trigger: ctaRef.current, start: "top 85%" }
+      }
     );
   }, []);
 
@@ -363,28 +375,31 @@ export default function AboutPage() {
       ════════════════════════════════════════ */}
       <section
         aria-label="About Aaradhya Tour and Travels"
-        className="relative min-h-screen flex items-center pt-[100px] pb-[60px] px-[5vw] overflow-hidden"
+        className="relative min-h-screen flex justify-center w-full items-center pt-[100px] pb-[60px] px-[5vw] overflow-hidden"
         style={{
           background:
             "linear-gradient(135deg,rgba(15,23,42,0.95) 0%,rgba(15,23,42,0.7) 50%,rgba(249,115,22,0.25) 100%), url('https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=1600&q=80') center/cover no-repeat",
         }}
       >
-        
-        <div className="absolute bottom-0 left-0 right-0 h-[120px] bg-gradient-to-t from-white to-transparent pointer-events-none" />
 
-        <div className="relative z-10 w-full max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-10 lg:gap-[60px] items-center">
+        <div className="absolute bottom-0 flex items-center justify-center w-full mx-auto left-0 right-0 h-[120px] bg-gradient-to-t from-white to-transparent pointer-events-none" />
+
+        <div className="relative z-10 w-full  justify-center flex  mx-auto grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-10 lg:gap-[60px] items-center">
 
           {/* Left */}
-          <div ref={contentRef} className="opacity-0">
-            <div className="inline-flex items-center gap-2 bg-[#F97316]/15 border border-[#F97316]/30 text-[#F97316] px-[14px] py-[6px] rounded-full text-[0.78rem] font-semibold tracking-[0.5px] uppercase mb-5">
+          <div ref={contentRef} className="opacity-0 w-full">
+            <div className="inline-flex items-center gap-2 bg-[#F97316]/15 border border-[#F97316]/30 text-[#F97316] px-[50px] py-[6px] rounded-full text-[1rem] font-semibold tracking-[0.5px] uppercase mb-5">
               <span ref={pulseRef} className="w-[6px] h-[6px] bg-[#F97316] rounded-full" />
-             About Us
+              About Us
             </div>
 
-            <FlipWord />
+
+            <FlipWordAbout />
+
+
 
             <p className="text-white/70 text-[1.1rem] leading-[1.7] mb-8 max-w-[520px]">
-              Book trusted cabs for local sightseeing, airport transfers &amp;
+              Book trusted cabs for local sightseeing, airport transfers &
               outstation travel. Explore the spiritual heart of India with
               comfort and safety.
             </p>
@@ -420,51 +435,9 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Right — about card */}
-          <div ref={cardRef} className="opacity-0">
-            <div className="bg-white rounded-[20px] p-7 shadow-[0_20px_60px_rgba(0,0,0,0.22)] border border-white/10">
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-11 h-11 bg-[#FFF7ED] rounded-[12px] flex items-center justify-center">
-                  <Car size={22} className="text-[#F97316]" />
-                </div>
-                <div>
-                  <h2 className="font-poppins font-bold text-[#0F172A] text-[1rem] leading-tight">
-                    Aaradhya Tour &amp; Travels
-                  </h2>
-                  <p className="text-[0.72rem] text-[#64748B]">cabservicesvaranasi.com</p>
-                </div>
-              </div>
-
-              {/* Quick facts */}
-              <div className="space-y-3 mb-5">
-                {[
-                  { icon: <MapPin size={14} />, text: "Godowlia, Varanasi, UP 221001" },
-                  { icon: <Phone size={14} />,  text: "+91 99999 99999 · +91 88888 88888" },
-                  { icon: <Clock size={14} />,  text: "Open 24 × 7 · 365 Days" },
-                  { icon: <Star size={14} />,   text: "4.9 ★ Rating · 347+ Reviews" },
-                ].map(({ icon, text }) => (
-                  <div key={text} className="flex items-center gap-[10px] text-[0.85rem] text-[#475569]">
-                    <span className="text-[#F97316] flex-shrink-0">{icon}</span>
-                    {text}
-                  </div>
-                ))}
-              </div>
-
-              <div className="border-t border-[#F1F5F9] pt-4">
-                <p className="text-[0.8rem] text-[#94A3B8] mb-3 font-medium uppercase tracking-wide">
-                  Services at a glance
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {["Local Taxi","Airport Transfer","Outstation","Pilgrimage","Corporate","Group Tours"].map((s) => (
-                    <span key={s} className="bg-[#FFF7ED] text-[#EA580C] text-[0.72rem] font-semibold px-3 py-1 rounded-full">
-                      {s}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
+
+
       </section>
 
       {/* ════════════════════════════════════════
@@ -502,7 +475,7 @@ export default function AboutPage() {
                 🕌
               </div>
               {/* Floating badge */}
-              <div className="absolute -bottom-5 -right-5 bg-[#F97316] text-white rounded-[16px] px-5 py-4 shadow-[0_8px_32px_rgba(249,115,22,0.35)]">
+              <div className="absolute -bottom-5 -right-0 md:-right-5 bg-[#F97316] text-white rounded-[16px] px-5 py-4 shadow-[0_8px_32px_rgba(249,115,22,0.35)]">
                 <span className="font-poppins text-[2.2rem] font-extrabold block leading-none">8+</span>
                 <span className="text-[0.78rem] opacity-90 font-medium">Years Serving Kashi</span>
               </div>
@@ -517,25 +490,26 @@ export default function AboutPage() {
                 className="font-poppins font-extrabold text-[#0F172A] leading-[1.2] mb-5"
                 style={{ fontSize: "clamp(1.6rem,2.8vw,2.2rem)" }}
               >
-                Varanasi&apos;s Most Trusted
+                Varanasi& Most Trusted
                 <br />
                 <span className="text-[#F97316]">Car Rental &amp; Taxi Service</span>
               </h2>
               <p className="text-[#475569] leading-[1.85] mb-4 text-[0.97rem]">
-                Aaradhya Tour &amp; Travels was born from a deep love for the
-                City of Light. Since 2016, we have been the silent companion
-                of thousands of pilgrims, tourists, and professionals navigating
-                the ancient lanes of Kashi.
+                At Cab Services Varanasi, we believe every journey should be safe,
+                comfortable, and memorable. We are committed to offering dependable
+                taxi services in Varanasi for pilgrims, tourists, families, and
+                corporate travelers visiting the spiritual capital of India.
               </p>
+
               <p className="text-[#475569] leading-[1.85] mb-6 text-[0.97rem]">
-                Our name — Aaradhya, meaning &ldquo;one who is worthy of worship&rdquo;
-                — reflects the reverence we bring to every journey. We don&apos;t
-                just drive you from A to B; we carry your trust, your family,
-                and your stories.
+                From seamless airport transfers and local sightseeing to outstation
+                cab bookings and corporate rides, we strive to deliver exceptional
+                service with professional drivers, clean vehicles, and 24/7 customer
+                support. Your comfort and trust drive us every mile.
               </p>
 
               <ul className="grid grid-cols-2 gap-3 list-none mb-8">
-                {["Local Taxi Varanasi","Airport Transfers","Outstation Cabs","Pilgrimage Tours","Corporate Travel","Group Bookings"].map((item) => (
+                {["Local Taxi Varanasi", "Airport Transfers", "Outstation Cabs", "Pilgrimage Tours", "Corporate Travel", "Group Bookings"].map((item) => (
                   <li key={item} className="flex items-center gap-[9px] text-[0.88rem] text-[#1E293B] font-medium">
                     <span className="w-[20px] h-[20px] bg-[#F97316] rounded-full flex items-center justify-center text-white text-[11px] font-bold flex-shrink-0">
                       ✓
@@ -545,16 +519,7 @@ export default function AboutPage() {
                 ))}
               </ul>
 
-              <div className="flex flex-wrap gap-3">
-                <a href="tel:+919999999999"
-                   className="inline-flex items-center gap-2 bg-[#F97316] text-white px-7 py-[13px] rounded-[10px] font-bold text-[0.95rem] no-underline hover:bg-[#ea6c0a] hover:-translate-y-[2px] transition-all duration-200 shadow-[0_4px_20px_rgba(249,115,22,0.35)]">
-                  <Phone size={15} /> Call Us Now
-                </a>
-                <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer"
-                   className="inline-flex items-center gap-2 bg-white text-[#1E293B] px-7 py-[13px] rounded-[10px] font-semibold text-[0.95rem] no-underline border border-[#E2E8F0] hover:bg-[#F8FAFC] hover:-translate-y-[2px] transition-all duration-200">
-                  💬 WhatsApp
-                </a>
-              </div>
+
             </div>
           </div>
         </div>
@@ -631,99 +596,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ════════════════════════════════════════
-          TEAM
-      ════════════════════════════════════════ */}
-      <section
-        aria-label="Meet our team"
-        className="py-20 px-[5vw] bg-white"
-      >
-        <div className="max-w-[1280px] mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-[0.75rem] font-bold tracking-[2px] uppercase text-[#F97316] mb-2">
-              The People Behind Every Ride
-            </p>
-            <h2
-              className="font-poppins font-extrabold text-[#0F172A] leading-[1.2]"
-              style={{ fontSize: "clamp(1.6rem,2.8vw,2.2rem)" }}
-            >
-              Meet Our Core Team
-            </h2>
-          </div>
-
-          <div
-            ref={teamRef}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-[820px] mx-auto"
-          >
-            {team.map(({ initials, name, role, exp }) => (
-              <div
-                key={name}
-                className="team-card opacity-0 bg-[#F8FAFC] rounded-[18px] p-6 text-center border border-[#E2E8F0] hover:border-[#F97316]/40 hover:shadow-[0_8px_32px_rgba(249,115,22,0.1)] transition-all duration-300"
-              >
-                <div className="w-16 h-16 bg-gradient-to-br from-[#F97316] to-[#EA580C] rounded-full flex items-center justify-center text-white font-poppins font-extrabold text-[1.4rem] mx-auto mb-4 shadow-[0_4px_16px_rgba(249,115,22,0.35)]">
-                  {initials}
-                </div>
-                <h3 className="font-poppins font-bold text-[#0F172A] text-[1rem] mb-1">{name}</h3>
-                <p className="text-[#F97316] text-[0.8rem] font-semibold mb-1">{role}</p>
-                <p className="text-[#94A3B8] text-[0.76rem]">{exp}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════════════
-          CTA BANNER
-      ════════════════════════════════════════ */}
-      <section
-        ref={ctaRef}
-        aria-label="Book a cab in Varanasi"
-        className="opacity-0 py-20 px-[5vw] text-center"
-        style={{
-          background: "linear-gradient(135deg,#F97316 0%,#EA580C 100%)",
-        }}
-      >
-        <div className="max-w-[700px] mx-auto">
-          <p className="text-white/75 text-[0.85rem] font-semibold tracking-[2px] uppercase mb-3">
-            Ready to ride?
-          </p>
-          <h2
-            className="font-poppins font-extrabold text-white leading-[1.2] mb-4"
-            style={{ fontSize: "clamp(1.8rem,3.5vw,2.8rem)" }}
-          >
-            🕉️ Book Your Cab in Varanasi Today
-          </h2>
-          <p className="text-white/80 text-[1.05rem] mb-9 leading-[1.7]">
-            Local sightseeing, airport transfer, or a Char Dham yatra — we
-            have a vehicle and a driver for every journey. Available 24×7,
-            365 days a year.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <a
-              href="tel:+919999999999"
-              className="inline-flex items-center gap-2 bg-white text-[#F97316] px-8 py-[14px] rounded-[10px] font-bold text-[1rem] no-underline hover:-translate-y-[2px] transition-all duration-200 shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
-            >
-              <Phone size={16} /> Call Now
-            </a>
-            <a
-              href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20book%20a%20cab%20in%20Varanasi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#25D366] text-white px-8 py-[14px] rounded-[10px] font-bold text-[1rem] no-underline hover:bg-[#1ebe5b] hover:-translate-y-[2px] transition-all duration-200"
-            >
-              💬 WhatsApp Booking
-            </a>
-          </div>
-        </div>
-      </section>
-
+      
       {/* ════════════════════════════════════════
           EXISTING COMPONENTS
       ════════════════════════════════════════ */}
-      <AboutTab />
+      
       <AboutSeoContent />
-      <PolicyAccordion />
-      <Last />
+      
+      
 
       <footer>
         <Footer />
