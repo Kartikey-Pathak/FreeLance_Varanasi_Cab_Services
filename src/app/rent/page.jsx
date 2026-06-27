@@ -8,6 +8,7 @@ import Nav from "../../../components/Nav";
 import Side from "../../../components/Side";
 import Last from "../../../components/Last";
 import SeoContent from "../../../components/SeoContent";
+import Reviews from "../../../components/Testimonial";
 
 function Rent() {
       const [open, setOpen] = useState(false);
@@ -21,7 +22,7 @@ function Rent() {
 
             <SeoContent/>
             
-            <Last/>
+            <Reviews/>
 
             <footer>
                 <Footer />

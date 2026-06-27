@@ -75,7 +75,7 @@ export default function Hero() {
   `;
 
     // Replace with your WhatsApp number (country code without +)
-    const whatsappNumber = "918881509360";
+    const whatsappNumber = "918299529846";
 
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
       message
@@ -143,7 +143,7 @@ export default function Hero() {
 
           {/* Sub-headline */}
           <p className="text-white/70 text-[1.1rem] leading-[1.7] mb-8 max-w-[520px]">
-            Book trusted cabs for local sightseeing, airport transfers &amp;
+            Book trusted cabs for local sightseeing, airport transfers &;
             outstation travel. Explore the spiritual heart of India with comfort
             and safety.
           </p>
@@ -151,13 +151,13 @@ export default function Hero() {
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-[14px] mb-10">
             <a
-              href="tel:+919999999999"
+              href="tel:+918299529846"
               className="inline-flex items-center gap-2 bg-[#F97316] text-white px-[30px] py-[14px] rounded-[10px] font-bold text-[1rem] no-underline hover:bg-[#ea6c0a] hover:-translate-y-[2px] transition-all duration-200 shadow-[0_4px_20px_rgba(249,115,22,0.4)] hover:shadow-[0_8px_28px_rgba(249,115,22,0.5)]"
             >
               Call Now
             </a>
             <a
-              href="https://wa.me/919999999999"
+              href="https://wa.me/918299529846"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white/10 text-white px-[30px] py-[14px] rounded-[10px] font-semibold text-[1rem] no-underline border border-white/30 backdrop-blur-md hover:bg-green-500 active:bg-green-500 hover:-translate-y-[2px] transition-all duration-200"
@@ -231,7 +231,7 @@ export default function Hero() {
                 value={form.phone}
                 onChange={handleChange}
                 maxLength={10}
-                placeholder="9876543210"
+                placeholder="Enter Mobile No."
                 className={`w-full px-[14px] py-[11px] border-[1.5px] rounded-[10px] text-[0.9rem] text-[#1E293B] bg-[#F8FAFC] outline-none transition-all focus:border-[#F97316] focus:shadow-[0_0_0_3px_rgba(249,115,22,0.12)]
         ${errors.phone ? "border-red-500" : "border-[#E2E8F0]"}`}
               />

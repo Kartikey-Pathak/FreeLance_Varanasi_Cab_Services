@@ -1,12 +1,12 @@
 export default function Call() {
-  const phoneNumber = "918090579753";
+  const phoneNumber = "918299529846";
   const callUrl = `tel:${phoneNumber}`;
 
   return (
     <div className="fixed right-5 md:right-10 bottom-5 md:bottom-10 z-[99999]">
       <a
         href={callUrl}
-        className="flex items-center justify-center active:bg-black/70 h-12 w-12 md:w-14 md:h-14 bg-black text-white rounded-full hover:bg-black/50 transition-all transition-colors"
+        className="flex items-center justify-center active:bg-black/70 h-12 w-12 md:w-14 md:h-14 bg-[#F97316] text-white rounded-full hover:bg-black/50 transition-all transition-colors"
       >
         {/* Phone SVG */}
         <svg

@@ -79,9 +79,9 @@ export default function Home() {
 
 
         <Testimonial />
-        <PolicyMain />
+        
 
-        <Last />
+       
       </main>
       <footer>
         <Footer />
