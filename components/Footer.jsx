@@ -60,12 +60,18 @@ const Footer = () => {
                 Get Travel Deals & Updates
               </h3>
 
-              <div className="flex items-center">
+              <div className="  ">
                 {/* Email Input */}
                 <p className="text-gray-400 mt-4">Email : <a href="mailto:rajat6427@gmail.com" className="text-[#F97316] hover:underline">
 
                   cabservicesvaranasi91@gmail.com</a>
                 </p>
+                <p className="text-gray-400 mt-4">Call Now : <a
+              href="tel:+918299529846"
+              className=" text-[#F97316] hover:underline  transition-all duration-200 "
+            >
+              +918299529846
+            </a></p>
 
               </div>
             </div>
@@ -80,16 +86,25 @@ const Footer = () => {
               © 2026 Cab Services Varanasi. All rights reserved.
             </p>
 
-            <p className="text-gray-400">
+            <p className="text-gray-400 gap-3 mt-16 flex flex-col">
               Website designed & developed by <br />
               <a
-                className="text-orange-500 text-xl underline"
+                className="text-orange-500 text-xl transition-all hover:underline active:underline"
                 href="https://wa.me/918881509360"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 
                 Kartikey Pathak <i class="fa-brands fa-whatsapp"></i>
+              </a>
+              <a
+                className="text-orange-500 text-xl transition-all hover:underline active:underline"
+                href="https://www.linkedin.com/in/kartikey-pathakb580297/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                
+                Linkedin <i class="fa-brands fa-linkedin"></i>
               </a>
             </p>
 

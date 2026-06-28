@@ -4,12 +4,16 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { usePathname } from "next/navigation";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Nav2({ open, setOpen }) {
   const [windowWidth, setWindowWidth] = useState(0);
   const navRef = useRef(null);
+    const pathname = usePathname();
+  
 
   // ✅ Safe window width detection
   useEffect(() => {
@@ -53,11 +57,11 @@ export default function Nav2({ open, setOpen }) {
   return (
     <nav
       ref={navRef}
-      className="opacity-0 fixed top-0 z-40 w-full flex items-center justify-between h-18 bg-white/96 transition-all"
+      className="opacity-0 fixed top-0 z-40 w-full flex items-center justify-between h-18 backdrop-blur-sm transition-all"
     >
       {isDesktop ? (
         <div className="navbar w-full flex justify-between items-center px-10">
-          {/* Logo */}
+          {/* Logo
           <div className="flex items-center justify-center cursor-pointer h-[40%] w-24">
             <a href="/"><img
               src="/logo.png"
@@ -65,34 +69,46 @@ export default function Nav2({ open, setOpen }) {
               alt="Logo"
             />
             </a>
-          </div>
+          </div> */}
 
           {/* Menu */}
           <ul className="flex gap-10 w-full justify-center items-center">
             <li>
-              <Link href="/" className="text-xl font-semibold shrink-0 hover:text-black/60 hover:text-[1.4rem] transition-all text-black">
+              <Link href="/" className={`  font-semibold text-xl shrink-0 hover:text-[#FF3600]/80  transition-all ${
+                  pathname === "/" ? "text-[#FF3600] underline" : "text-[#F97316]"
+                }`}>
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/about" className="text-xl font-semibold shrink-0 hover:text-black/60 hover:text-[1.4rem] transition-all text-black ">
+              <Link href="/about" className={` font-semibold shrink-0 text-xl hover:text-[#FF3600]/80  transition-all ${
+                  pathname === "/about" ? "text-[#FF3600] underline" : "text-[#F97316]"
+                }`}>
                 About
               </Link>
             </li>
-            <li>
-              <Link href="/domestic" className="text-black shrink-0  font-semibold text-xl hover:text-black/60 hover:text-[1.4rem] transition-all">
-                Domestic
+             <li>
+              <Link
+                href="/rent"
+                className={` shrink-0  font-semibold text-xl hover:text-[#FF3600]/80  transition-all ${
+                  pathname === "/rent" ? "text-[#FF3600] underline" : "text-[#F97316]"
+                }`}
+              >
+                Rent a Car
               </Link>
             </li>
             <li>
-               <Link href="/international" className="text-black shrink-0  font-semibold text-xl hover:text-black/60 hover:text-[1.4rem] transition-all">
-                International
+              <Link
+                href="/contact"
+                className={` shrink-0  font-semibold text-xl hover:text-[#FF3600]/80  transition-all ${
+                  pathname === "/contact" ? "text-[#FF3600] underline" : "text-[#F97316]"
+                }`}
+              >
+                Contact Us
               </Link>
             </li>
           </ul>
-          <Link href="/enquiry"><div className=" h-14 w-44 rounded-2xl bg-[#FB5B32] cursor-pointer hover:bg-black transition-all ease-in-out flex items-center justify-center">
-            <h1 className=" font-semibold text-white">Book Now</h1> 
-          </div></Link>
+        
         </div>
       ) : (
         // ✅ Mobile Navbar
