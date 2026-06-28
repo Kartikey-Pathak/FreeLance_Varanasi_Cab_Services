@@ -2,12 +2,8 @@
 
 import {
   Car,
-  KeyRound,
   ShieldCheck,
-  CalendarCheck,
-  MapPin,
   Phone,
-  Clock,
   Star,
   Users,
   Award,
@@ -77,11 +73,6 @@ const timeline = [
   { year: "2024", event: "5,000+ rides completed. Launched Urbania luxury service & corporate accounts." },
 ];
 
-const team = [
-  { initials: "RK", name: "Rajesh Kumar", role: "Founder & CEO", exp: "12 yrs driving exp." },
-  { initials: "AS", name: "Anuj Singh", role: "Fleet Manager", exp: "8 yrs in logistics" },
-  { initials: "PM", name: "Priya Mishra", role: "Customer Relations", exp: "6 yrs in hospitality" },
-];
 
 // ─── Structured data for SEO ──────────────────────────────────────────────────
 
@@ -105,7 +96,7 @@ const schemaOrg = {
     "https://cabservicesvaranasi.com/og-image.jpg",
   ],
 
-  telephone: "+918090579753",
+  telephone: "+918299529846",
 
   email: "cabservicesvaranasi91@gmail.com",
 
@@ -406,17 +397,17 @@ export default function AboutPage() {
 
             <div className="flex flex-wrap gap-[14px] mb-10">
               <a
-                href="tel:+919999999999"
-                aria-label="Call Aaradhya Tour and Travels"
+                href="tel:+918299529846"
+                aria-label="Call Cab Services Varanasi"
                 className="inline-flex items-center gap-2 bg-[#F97316] text-white px-[30px] py-[14px] rounded-[10px] font-bold text-[1rem] no-underline hover:bg-[#ea6c0a] hover:-translate-y-[2px] transition-all duration-200 shadow-[0_4px_20px_rgba(249,115,22,0.4)]"
               >
                 <Phone size={16} /> Call Now
               </a>
               <a
-                href="https://wa.me/919999999999"
+                href="https://wa.me/918299529846"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="WhatsApp Aaradhya Tour and Travels"
+                aria-label="WhatsApp Cab Services Varanasi"
                 className="inline-flex items-center gap-2 bg-white/10 text-white px-[30px] py-[14px] rounded-[10px] font-semibold text-[1rem] no-underline border border-white/30 backdrop-blur-md hover:bg-green-500 hover:-translate-y-[2px] transition-all duration-200"
               >
                 💬 WhatsApp Us

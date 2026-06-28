@@ -23,6 +23,8 @@ export default function Card({
       opacity: 1,
       duration: 0.3,
     });
+    console.log(window.cursor);
+     window.cursor?.enter();
   };
 
   const onLeave = () => {
@@ -30,13 +32,20 @@ export default function Card({
       opacity: 0,
       duration: 0.3,
     });
+
+     window.cursor?.leave();
+    
   };
 
   return (
     <CardContainer className="w-full rounded-[20px] transition-all
+    
 duration-300
-hover:shadow-[0_0_40px_rgba(249,115,22,0.3)] inter-var">
+hover:shadow-[0_0_40px_rgba(249,115,22,0.3)] inter-var"
+onMouseEnter={() => window.cursor?.enter()}
+      onMouseLeave={() => window.cursor?.leave()}>
       <CardBody
+      
         ref={cardRef}
         onMouseEnter={onEnter}
         onMouseLeave={onLeave}

@@ -38,7 +38,7 @@ function Cursor() {
 
     window.cursor = {
       enter: () =>
-        gsap.to(ref.current, { scale: 1.6, duration: 0.9 }),
+        gsap.to(ref.current, { scale: 2.6, duration: 0.9 }),
       leave: () =>
         gsap.to(ref.current, { scale: 1, duration: 0.9 }),
     };
@@ -53,7 +53,7 @@ function Cursor() {
       ref={ref}
       className="
         fixed top-0 left-0 z-[999999]
-        size-3 rounded-full bg-[#FF3600]
+        size-3 rounded-full bg-[#F97316]
         pointer-events-none
         -translate-x-1/2 -translate-y-1/2
       "

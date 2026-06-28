@@ -129,7 +129,7 @@ export default function RootLayout({ children }) {
         className={`bg-white ${openSans.variable} scroll-smooth font-opensans`}
       >
         {children}
-        <Cursor />
+        <Cursor/>
         <SmoothScroll />
         <Whatsapp />
         <Call />
