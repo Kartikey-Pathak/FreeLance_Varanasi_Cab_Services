@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
@@ -129,7 +130,7 @@ function ServiceCard({ icon, title, desc }) {
 
   return (
     <CardContainer className="w-full hover:shadow-[0_0_60px_rgba(249,115,22,0.45)] cursor-pointer hover:backdrop-blur-3xl transition-all hover:rounded-4xl">
-  <CardBody className="bg-white relative rounded-[16px] p-[28px_24px] border-[1.5px] border-[#E2E8F0] w-full h-full">
+  <Link href="/rent"><CardBody className="bg-white relative rounded-[16px] p-[28px_24px] border-[1.5px] border-[#E2E8F0] w-full h-full">
 
     <CardItem
       translateZ={50}
@@ -166,7 +167,7 @@ function ServiceCard({ icon, title, desc }) {
       Book Now →
     </CardItem>
 
-  </CardBody>
+  </CardBody></Link>
 </CardContainer>
   );
 }
