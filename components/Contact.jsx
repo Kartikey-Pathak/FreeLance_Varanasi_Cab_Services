@@ -31,9 +31,9 @@ const Contact = () => {
               <h2 className="text-4xl font-bold mb-4">Contact Information</h2>
               <p className="text-gray-300 mb-8">Say something to start a live chat!</p>
 
-              <InfoItem icon={<FaPhoneAlt />} text={<a href="tel:+918090579753">+91 80905 79753</a>} />
-              <InfoItem icon={<FaEnvelope />} text={<a href="mailto:rajat6427@gmail.com">rajat6427@gmail.com</a>} />
-              <InfoItem icon={<FaMapMarkerAlt />} text={<>Varanasi 221005 <br />Uttar Pradesh, India</>} />
+              <InfoItem icon={<FaPhoneAlt />} text={<a href="tel:+918090579753">+91 8299529846</a>} />
+              <InfoItem icon={<FaEnvelope />} text={<a href="mailto:cabservicesvaranasi91@gmail.com">cabservicesvaranasi91@gmail.com</a>} />
+              <InfoItem icon={<FaMapMarkerAlt />} text={<>Varanasi 221006 <br />Uttar Pradesh, India</>} />
             </div>
 
             <div className="flex gap-4 mt-8">
@@ -67,7 +67,7 @@ const Contact = () => {
                 `Hey, I want to rent a car.\nFirst Name: ${firstName}\nLast Name: ${lastName}\nEmail: ${email}\nPhone: ${phone}\n${carText}\nMessage: ${message}`
               );
 
-              window.open(`https://wa.me/918090579753?text=${finalMessage}`, "_blank");
+              window.open(`https://wa.me/918299529846?text=${finalMessage}`, "_blank");
             }}
           >
             <div className="grid text-white md:grid-cols-2 gap-4">
