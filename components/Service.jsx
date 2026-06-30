@@ -95,7 +95,7 @@ export default function Services() {
         {/* Grid */}
         <div
           ref={gridRef}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:gap-6"
         >
           {services.map(({ icon, title, desc }) => (
             <ServiceCard key={title} icon={icon} title={title} desc={desc} />
@@ -129,7 +129,7 @@ function ServiceCard({ icon, title, desc }) {
   };
 
   return (
-    <CardContainer className="w-full hover:shadow-[0_0_60px_rgba(249,115,22,0.45)] cursor-pointer hover:backdrop-blur-3xl transition-all hover:rounded-4xl">
+    <CardContainer className="w-full hover:shadow-[0_0_60px_rgba(249,115,22,0.45)] rounded-[16px] active:shadow-[0_0_60px_rgba(249,115,22,0.45)] cursor-pointer hover:backdrop-blur-3xl transition-all hover:rounded-4xl">
   <Link href="/rent"><CardBody className="bg-white relative rounded-[16px] p-[28px_24px] border-[1.5px] border-[#E2E8F0] w-full h-full">
 
     <CardItem

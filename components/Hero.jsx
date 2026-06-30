@@ -116,7 +116,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center pt-[100px] pb-[60px] px-[5vw] overflow-hidden"
+      className="relative min-h-screen mt-10 flex items-center pt-[100px] pb-[60px] px-[5vw] overflow-hidden"
       style={{
         background:
           "linear-gradient(135deg, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.7) 50%, rgba(249,115,22,0.25) 100%), url('https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=1600&q=80') center/cover no-repeat",

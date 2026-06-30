@@ -24,7 +24,7 @@ export default function Card({
       duration: 0.3,
     });
     console.log(window.cursor);
-     window.cursor?.enter();
+    window.cursor?.enter();
   };
 
   const onLeave = () => {
@@ -33,8 +33,8 @@ export default function Card({
       duration: 0.3,
     });
 
-     window.cursor?.leave();
-    
+    window.cursor?.leave();
+
   };
 
   return (
@@ -42,10 +42,10 @@ export default function Card({
     
 duration-300
 hover:shadow-[0_0_40px_rgba(249,115,22,0.3)] inter-var"
-onMouseEnter={() => window.cursor?.enter()}
+      onMouseEnter={() => window.cursor?.enter()}
       onMouseLeave={() => window.cursor?.leave()}>
       <CardBody
-      
+
         ref={cardRef}
         onMouseEnter={onEnter}
         onMouseLeave={onLeave}
@@ -146,7 +146,7 @@ onMouseEnter={() => window.cursor?.enter()}
             className="w-full flex items-center
             justify-center gap-2 py-3 rounded-[10px]
             bg-[#25D366] text-white font-bold
-            hover:bg-[#1ebe5b] transition-colors"
+            hover:bg-[#1ebe5b] active:bg-[#1ebe5b] transition-colors"
           >
             Book on WhatsApp
           </CardItem>
