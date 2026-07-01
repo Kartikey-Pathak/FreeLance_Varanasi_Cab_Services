@@ -45,9 +45,8 @@ function Nav({ open, setOpen }) {
             <li>
               <Link
                 href="/"
-                className={`  font-semibold text-xl shrink-0 hover:text-[#FF3600]/80  transition-all ${
-                  pathname === "/" ? "text-[#FF3600] underline" : "text-white"
-                }`}
+                className={`  font-semibold text-xl shrink-0 hover:text-[#FF3600]/80  transition-all ${pathname === "/" ? "text-[#FF3600] underline" : "text-white"
+                  }`}
               >
                 Home
               </Link>
@@ -55,9 +54,8 @@ function Nav({ open, setOpen }) {
             <li>
               <Link
                 href="/about"
-                className={` font-semibold shrink-0 text-xl hover:text-[#FF3600]/80  transition-all ${
-                  pathname === "/about" ? "text-[#FF3600] underline" : "text-white"
-                }`}
+                className={` font-semibold shrink-0 text-xl hover:text-[#FF3600]/80  transition-all ${pathname === "/about" ? "text-[#FF3600] underline" : "text-white"
+                  }`}
               >
                 About
               </Link>
@@ -65,9 +63,8 @@ function Nav({ open, setOpen }) {
             <li>
               <Link
                 href="/rent"
-                className={` shrink-0  font-semibold text-xl hover:text-[#FF3600]/80  transition-all ${
-                  pathname === "/rent" ? "text-[#FF3600] underline" : "text-white"
-                }`}
+                className={` shrink-0  font-semibold text-xl hover:text-[#FF3600]/80  transition-all ${pathname === "/rent" ? "text-[#FF3600] underline" : "text-white"
+                  }`}
               >
                 Rent a Car
               </Link>
@@ -75,9 +72,8 @@ function Nav({ open, setOpen }) {
             <li>
               <Link
                 href="/contact"
-                className={` shrink-0  font-semibold text-xl hover:text-[#FF3600]/80  transition-all ${
-                  pathname === "/contact" ? "text-[#FF3600] underline" : "text-white"
-                }`}
+                className={` shrink-0  font-semibold text-xl hover:text-[#FF3600]/80  transition-all ${pathname === "/contact" ? "text-[#FF3600] underline" : "text-white"
+                  }`}
               >
                 Contact Us
               </Link>
@@ -95,12 +91,12 @@ function Nav({ open, setOpen }) {
           </Link> */}
         </div>
       ) : (
-        <div className="flex bg-white justify-between items-center h-24 mt-5 w-full px-5 backdrop-blur-2xl ">
+        <div className="flex backdrop-blur-3xl bg-white/1 justify-between items-center h-24 mt-5 w-full px-5  ">
           {/* Logo */}
           <div className="flex items-center justify-center h-full w-[10rem]">
             <a href="/" className=" flex items-center justify-center">
               <img
-                src="/logo.png"
+                src="/logo2.png"
                 alt="Logo"
                 className="h-full w-auto object-contain"
               />
@@ -112,9 +108,9 @@ function Nav({ open, setOpen }) {
             {/* Dropdown */}
             <summary
               onClick={() => setOpen(true)}
-              className="btn text-black bg-transparent border-none shadow-none"
+              className="btn text-white bg-transparent border-none shadow-none"
             >
-              <i className="fa-solid fa-bars text-black text-2xl"></i>
+              <i className="fa-solid fa-bars text-2xl"></i>
             </summary>
           </div>
         </div>
